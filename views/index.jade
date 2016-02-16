@@ -18,6 +18,10 @@ html
             form(method="POST", action="/invite")#join-form.form
               input(type="text", name="email", placeholder="Enter Your Email Address")#slack-email.field
               input(type="submit", value="Join").submit
+        .content
+          .information
+            p Already a slack user? 
+              a(href="https://#{slackUrl}") Sign in to #{community} here
     script.
       var form = document.getElementById('join-form');
       var email = document.getElementById('slack-email')
