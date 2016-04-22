@@ -9,6 +9,9 @@ margin:0;
 padding:0;
 font-family: 'Lato', sans-serif;
 background: #fff url(../images/bg.jpg) center top no-repeat;
+background-size: cover;
+height: 100%;
+width: 100%;
 }
 
 
@@ -100,7 +103,8 @@ font-family: 'Lato', sans-serif;
 font-size: 16px;
 color: #ffffff;
 float: left;
-padding: 15px ;
+padding: 15px;
+margin-bottom: 15px;
 }
 
 @media only screen and (max-device-width: 420px)  {
@@ -139,4 +143,19 @@ background: #eeeeee;
 
 p{
 	text-align: center;
+}
+.error {
+  color: #FE7070;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+a {
+  color: #92BCF2;
+  font-weight: 700;
+}
+
+a:visited,
+a:hover {
+  color: #7EB6FF;
 }
