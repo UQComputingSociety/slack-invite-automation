@@ -7,10 +7,14 @@ html,body{
 margin:0;
 padding:0;
 font-family: 'Open Sans', sans-serif;
-background: #fff url(../images/bg.jpg) center top no-repeat;
+/* fallback as described in http://callmenick.com/post/svg-fallback-with-png */
+background: #2F312E url(../images/base.svg.png) center top no-repeat;
+background-image: url('../images/base.svg'), none;
 background-size: cover;
 height: 100%;
 width: 100%;
+/* for if the content is longer than one page */
+overflow: auto;
 }
 
 
@@ -31,6 +35,11 @@ width: 100%;
 float: left;
 }
 
+.logo {
+    width: 200px;
+    display: block;
+    margin: 10px auto;
+}
 
 
 .header{
@@ -89,13 +98,12 @@ display: block;
 .form{
 position: relative;
 width: 478px;
-margin-top: 20px;
 }
 
 .field{
-background: url(../images/field.png) repeat;
+background: rgba(255,255,255,0.15);
 width: 448px;
--webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
+-webkit-border-radius: 10px;-moz-border-radius: 10px;border-radius: 10px;
 border: none;
 font-style: italic;
 font-family: 'Lato', sans-serif;
@@ -129,7 +137,7 @@ position: absolute;
 right: 15px;
 top: 13px;
 padding: 3px 10px;
--webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
+-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;
 background: #ffffff;
 border: none;
 font-family: 'Lato', sans-serif;

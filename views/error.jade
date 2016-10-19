@@ -10,6 +10,7 @@ html
     #wrapper
       .main
         .header
+          img(src="images/logo.svg", onerror="this.src='images/logo.svg.png'", class="logo")
           h1= message
           h2= error.status
           pre #{error.stack}
