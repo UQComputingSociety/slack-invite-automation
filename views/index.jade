@@ -24,10 +24,11 @@ html
         .content
           .information
             form(method="POST", action="/invite")#join-form.form
-              input(type="email", name="email", placeholder="#{__('ENTER_EMAIL')}")#slack-email.field
+              div#error
+              input(type="text", name="email", placeholder="#{__('ENTER_EMAIL')}")#slack-email.field
               if tokenRequired
                 input(type="text", name="token", placeholder="#{__('ENTER_TOKEN')}")#slack-token.field
-              input(type="submit", value="Join").submit
+              input(type="submit", value="Join")#submit.submit
         .content
           .information
             p Already a slack user? 
@@ -39,11 +40,41 @@ html
       var form = document.getElementById('join-form');
       var email = document.getElementById('slack-email');
       var token = document.getElementById('slack-token');
+      var submit = document.getElementById('submit');
+      var error = document.getElementById('error');
+      var rInvalidEmail = /^s\d{7}@uq.edu.au$/;
+      function hideError () {
+        submit.disabled = false;
+        error.style.display = 'none';
+        submit.style.top = '13px';
+        error.style.padding = 0;
+      }
+      function showError (message) {
+        submit.disabled = true;
+        console.log('wat');
+        error.style.display = 'block';
+        error.innerText = message;
+        submit.style.top = '54px';
+        error.style.padding = '10px';
+      }
+      email.addEventListener('input', function(evt) {
+        var value = email.value;
+        console.log(value, rInvalidEmail.test(value));
+        if (submit.disabled) {
+          if (value && !(rInvalidEmail.test(value)))
+            hideError();
+        } else if (rInvalidEmail.test(value))
+          showError('Emails cannot be sent to this email.');
+        else if (!value)
+          submit.disabled = true;
+      });
       form.addEventListener('submit', function(evt) {
         if (!email.value) {
+          showError('Email cannot be blank.');
           evt.preventDefault();
-        }
-        if (tokenRequired && !token.value) {
+        } else if (!/@/.test(email.value)) {
+          showError('Emails must include a \'@\'.');
           evt.preventDefault();
-        }
+        } else if (tokenRequired && !token.value)
+          evt.preventDefault();
       });
