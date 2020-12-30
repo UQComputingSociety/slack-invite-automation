@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
 /* Reset */
 
 * {
@@ -40,12 +41,8 @@ h6 {
 
 html,
 body {
-    font-family: 'Open Sans', sans-serif;
-    /* fallback as described in http://callmenick.com/post/svg-fallback-with-png */
-    
-    background: #2F312E url(../images/base.svg.png) center top no-repeat;
-    background-image: url('../images/base.svg'), none;
-    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    background: #414141;
     height: 100%;
     width: 100%;
     color: white;
@@ -71,16 +68,16 @@ body {
     float: left;
 }
 .logo {
-    width: 200px;
+    width: 300px;
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
 }
 .header {
     margin-top: 160px;
     margin-bottom: 40px;
 }
 h1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     text-align: center;
     font-size: 50px;
     font-weight: 300;
@@ -118,21 +115,23 @@ h3 {
 }
 .field {
     background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
     width: 448px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
     border: none;
-    font-style: italic;
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
     padding: 15px;
     margin-bottom: 15px;
     outline: none;
 }
 .field:focus {
+    color: #ffffff;
     border: 1px solid #ffffff;
     padding: 14px;
+}
+.field::placeholder {
+
+    color: #aeaeae;
 }
 #error {
 	background-color: rgba(255, 80, 80, 0.5);
@@ -153,22 +152,20 @@ h3 {
     }
 }
 .submit {
-    position: absolute;
-    right: 15px;
-    top: 13px;
-    padding: 3px 10px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    background: #ffffff;
+    padding: 10px 20px;
+    background: #37c6ff;
+    color: white;
     border: none;
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+    display: block;
+    margin: 15px auto;
 }
 .submit:hover {
-    background: #eeeeee;
+    background: white;
+    color: #37c6ff;
 }
 p {
     text-align: center;
@@ -179,14 +176,13 @@ p {
     font-size: 25px;
 }
 a {
-    color: #92BCF2;
+    color: #37c6ff;
     font-weight: 700;
 }
-a:visited,
 a:hover {
-  color: #7EB6FF;
+    color: #ffffff;
 }
 
 .g-recaptcha, .g-recaptcha > div {
-  margin: auto;
+    margin: auto;
 }
