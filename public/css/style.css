@@ -90,7 +90,7 @@ h1 strong {
 h2 {
     text-align: center;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 14pt;
 }
 h2 strong {
     font-weight: 700;
@@ -106,7 +106,7 @@ h3 {
     font-weight: 600;
 }
 .information p {
-    font-size: 16px;
+    font-size: 12pt;
     display: block;
 }
 .form {
@@ -153,11 +153,11 @@ h3 {
 }
 .submit {
     padding: 10px 20px;
-    background: #37c6ff;
+    background: #50C3F0 ;
     color: white;
     border: none;
     font-family: 'Inter', sans-serif;
-    font-size: 20px;
+    font-size: 16pt;
     font-weight: bold;
     cursor: pointer;
     display: block;
@@ -165,7 +165,7 @@ h3 {
 }
 .submit:hover {
     background: white;
-    color: #37c6ff;
+    color: #50C3F0 ;
 }
 p {
     text-align: center;
@@ -176,7 +176,7 @@ p {
     font-size: 25px;
 }
 a {
-    color: #37c6ff;
+    color: #50C3F0 ;
     font-weight: 700;
 }
 a:hover {
