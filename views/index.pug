@@ -18,11 +18,11 @@ html
       .container
         .columns.is-centered.is-mobile
           .column#body
-            .my-1#header
+            .my-2#header
               img(src="images/logo.svg", onerror="this.src='images/logo.svg.png'", id="logo")
-              h4(class="title is-4 my-5") #{__('HEADER', community)}
+              h4(class="title is-4 my-5") Join the Slack!
             form(method="POST", action="invite")#join-form.form
-              .field
+              .field.mb-5
                 label(class="label" for="slack-email") Email Address
                 .control
                   input(class="input", type="email", name="email", required, autofocus, placeholder="a.smith@example.com")#slack-email.field
@@ -30,26 +30,33 @@ html
                   span first.last@uqconnect.edu.au, 
                   span first.last@uq.net.au, 
                   span s1234567@student.uq.edu.au. 
-              .field.my-5
+              .field.mb-5
                 .control
                   label.checkbox
                     input(type="checkbox", required)
                     span#checkboxlabel I have read and understood the 
-                      a(href="https://uqcs.org/code-of-conduct" target="_blank") Code of Conduct
+                      a(href="https://uqcs.org/code-of-conduct" target="_blank") Code of Conduct.
 
               if !!recaptchaSiteKey
-                .field
+                .field.mb-5
                   .control
                     div(class="g-recaptcha", data-sitekey=recaptchaSiteKey)
               .forminformation
               
-              .buttons.wide.mb-1
+              .buttons.wide.mb-2
                 input(class="button is-link" type="submit", value="Join").submit
             p(class="help") Already a slack user? 
               a(href=`https://${slackUrl}`) Sign in to #{community} here
            
     if !!recaptchaSiteKey
       script(src='https://www.google.com/recaptcha/api.js')
+
+      //- Captcha theming
+      script.
+        document.addEventListener('DOMContentLoaded', (event) => {
+          const recaptcha = document.querySelector('.g-recaptcha');
+          recaptcha.setAttribute("data-theme", "dark");
+        });
     script.
       var tokenRequired = #{tokenRequired};
       var form = document.getElementById('join-form');
