@@ -38,10 +38,7 @@ html
                       a(href="https://uqcs.org/code-of-conduct" target="_blank") Code of Conduct.
 
               if !!recaptchaSiteKey
-                .field.mb-5
-                  .control
-                    div(class="g-recaptcha", data-sitekey=recaptchaSiteKey)
-              .forminformation
+                div(class="g-recaptcha", data-sitekey=recaptchaSiteKey, data-size="invisible", data-callback="captchaComplete")
               
               .buttons.wide.mb-2
                 input(class="button is-link" type="submit", value="Join").submit
@@ -99,9 +96,15 @@ html
           evt.preventDefault();
         } else if (tokenRequired && !token.value) {
           evt.preventDefault();
-        }
-        var recaptcha = document.getElementById('g-recaptcha-response');
-        if (recaptcha && recaptcha.value === '') {
-          evt.preventDefault();
-        }
+        } 
+
+        evt.preventDefault();
+        grecaptcha.execute();
+        
       });
+      function captchaComplete(token) {
+        var recaptcha = document.getElementById('g-recaptcha-response');
+        if (recaptcha && recaptcha.value !== '') {
+          form.submit();
+        }
+      }
