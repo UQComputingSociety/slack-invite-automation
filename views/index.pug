@@ -35,15 +35,17 @@ html
                   label.checkbox
                     input(type="checkbox", required)
                     span#checkboxlabel I have read and understood the 
-                      a(href="https://uqcs.org/code-of-conduct" target="_blank") Code of Conduct.
+                      a(href="https://uqcs.org/code-of-conduct" target="_blank") Code of Conduct
+                      | .
 
               if !!recaptchaSiteKey
                 div(class="g-recaptcha", data-sitekey=recaptchaSiteKey, data-size="invisible", data-callback="captchaComplete")
               
               .buttons.wide.mb-2
                 input(class="button is-link" type="submit", value="Join").submit
-            p(class="help") Already a slack user? 
+            p(class="help") Already a Slack user? 
               a(href=`https://${slackUrl}`) Sign in to #{community} here
+              | .
            
     if !!recaptchaSiteKey
       script(src='https://www.google.com/recaptcha/api.js')
